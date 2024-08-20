@@ -1,0 +1,242 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-08-20T10:29:15.586Z",
+    "end": "2024-08-20T10:29:42.316Z",
+    "duration": 26730
+  },
+  "results": [
+    {
+      "uuid": "4fd589f9-8252-4f73-bc87-d28a9492e851",
+      "title": "",
+      "fullFile": "cypress\\all-tests\\automation-test-store\\add-multiple-items.js",
+      "file": "cypress\\all-tests\\automation-test-store\\add-multiple-items.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5e956565-77d5-4da3-bca5-e09ced35d382",
+          "title": "Add multiple items to basket",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add specific item to basket",
+              "fullTitle": "Add multiple items to basket Add specific item to basket",
+              "timedOut": null,
+              "duration": 2307,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@productNames\").then(productNames => {\n  productNames.productName.forEach(elm => {\n    cy.selectProduct(elm);\n  });\n});",
+              "err": {},
+              "uuid": "969b35df-a03f-4cec-9477-6ac616837784",
+              "parentUUID": "5e956565-77d5-4da3-bca5-e09ced35d382",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "969b35df-a03f-4cec-9477-6ac616837784"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2307,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "070530b3-1ed7-46a7-8732-2a92f036cbf0",
+      "title": "",
+      "fullFile": "cypress\\all-tests\\automation-test-store\\contact-us.js",
+      "file": "cypress\\all-tests\\automation-test-store\\contact-us.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ecc723e7-c8c3-489c-a6db-6d61f6f20c3a",
+          "title": "Test Contact Us form",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User should be able to submit form",
+              "fullTitle": "Test Contact Us form User should be able to submit form",
+              "timedOut": null,
+              "duration": 4450,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.viewport(550, 750);\ncy.visit(\"https://www.automationteststore.com/\");\ncy.get(\".info_links_footer > :nth-child(5) > a\").click();\ncy.get(\"#ContactUsFrm_first_name\").type(\"test\");\ncy.get(\"#ContactUsFrm_email\").type(\"test@text.com\");\ncy.get(\"#ContactUsFrm_enquiry\").type(\"test\");\ncy.get(\".col-md-6 > .btn\").click();",
+              "err": {},
+              "uuid": "2c967d1c-a850-4eba-9828-ab2c90b96f70",
+              "parentUUID": "ecc723e7-c8c3-489c-a6db-6d61f6f20c3a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2c967d1c-a850-4eba-9828-ab2c90b96f70"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4450,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "192a444b-a0dc-4430-b821-efe17cbe4a1f",
+      "title": "",
+      "fullFile": "cypress\\all-tests\\automation-test-store\\smoke.js",
+      "file": "cypress\\all-tests\\automation-test-store\\smoke.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "86b7e5b2-f608-454c-9589-9e811cd1adcd",
+          "title": "Smoke Test for Automation Test Store",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User should be able to submit Contact US form",
+              "fullTitle": "Smoke Test for Automation Test Store User should be able to submit Contact US form",
+              "timedOut": null,
+              "duration": 5171,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let contactUsData = {\n  firstName: (0, _helper.getRandomString)(5),\n  email: (0, _helper.getRandomEmail)(),\n  enquiry: (0, _helper.getRandomString)(15)\n};\ncy.log(\"GIVEN User is at Main Page\");\n_homePage.default.open();\ncy.log(\"AND User clicks on Contact Us link\");\n_homePage.default.clickContactUsLink();\ncy.log(\"AND User enters First Name\");\n_contactUsPage.default.enterFirstName(contactUsData.firstName);\ncy.log(\"AND User enters Email\");\n_contactUsPage.default.enterEmail(contactUsData.email);\ncy.log(\"AND User enters Enquiry\");\n_contactUsPage.default.enterEnquiry(contactUsData.enquiry);\ncy.log(\"AND User clicks on Send button\");\n_contactUsPage.default.submitContactUs();\ncy.log(\"THEN Successfully message is displayed\");\n_contactUsPage.default.verifyContactUsMessage(\"Your enquiry has been successfully sent to the store owner!\");\ncy.log(\"AND Thumbs icon is displayed\");\n_contactUsPage.default.verifyThumbs();",
+              "err": {},
+              "uuid": "b635d1a2-5818-4c95-a015-c9e56bd9228a",
+              "parentUUID": "86b7e5b2-f608-454c-9589-9e811cd1adcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User should be able to add product to cart",
+              "fullTitle": "Smoke Test for Automation Test Store User should be able to add product to cart",
+              "timedOut": null,
+              "duration": 2973,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const product = {\n  productName: \"Skinsheen Bronzer Stick\",\n  model: \"558003\",\n  unitPrice: \"$29.50\",\n  description: \"Bronzes, shapes and sculpts the face. Sheer-to-medium buildable coverage that looks naturally radiant and sunny. Stashable - and with its M·A·C Surf, Baby look – way cool. Limited edition.\"\n};\ncy.log(\"GIVEN User is at Main Page\");\n_homePage.default.open();\ncy.log(`AND User opens details for ${product.productName} product`);\n_homePage.default.openProductDetails(product.productName);\ncy.log(`THEN Product Name is ${product.productName}`);\n_productDetailsPage.default.verifyProductName(product.productName);\ncy.log(`THEN Product Price is ${product.unitPrice}`);\n_productDetailsPage.default.verifyProductPrice(product.unitPrice);\ncy.log(`THEN Product Model is ${product.model}`);\n_productDetailsPage.default.verifyProductModel(product.model);\ncy.log(`THEN Product Description is ${product.description}`);\n_productDetailsPage.default.verifyProductDescription(product.description);\ncy.log(`WHEN User adds ${product.productName} product to cart`);\n_productDetailsPage.default.addProductToCart();",
+              "err": {},
+              "uuid": "530d7b29-a8fb-49f6-b8c4-77e170128543",
+              "parentUUID": "86b7e5b2-f608-454c-9589-9e811cd1adcd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b635d1a2-5818-4c95-a015-c9e56bd9228a",
+            "530d7b29-a8fb-49f6-b8c4-77e170128543"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8144,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
